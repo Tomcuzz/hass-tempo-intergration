@@ -58,7 +58,6 @@ class TodaySensor(SensorEntity):
         return "mdi:check-circle-outline"
         
     def get_state(self) -> str:
-        def update(self) -> None:
         """Fetch new state data for the sensor.
         """
         day_colour = "Unknown"
