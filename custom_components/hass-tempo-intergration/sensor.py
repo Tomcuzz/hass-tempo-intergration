@@ -4,9 +4,7 @@ import requests
 import datetime
 
 from homeassistant.components.sensor import (
-    # SensorDeviceClass,
     SensorEntity,
-    # SensorStateClass,
 )
 from homeassistant.const import UnitOfTemperature
 from homeassistant.core import HomeAssistant
