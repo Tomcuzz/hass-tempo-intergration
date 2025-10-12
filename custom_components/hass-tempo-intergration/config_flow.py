@@ -5,7 +5,7 @@ from homeassistant.core import callback
 from homeassistant.const import CONF_NAME
 
 # The domain of your component
-DOMAIN = "my_sensor_integration"
+from .const import DOMAIN
 
 class MySensorConfigFlow(config_entries.ConfigFlow, domain=DOMAIN):
     """Handle a config flow for My Sensor Integration."""
