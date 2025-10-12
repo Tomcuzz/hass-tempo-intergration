@@ -34,19 +34,17 @@ class TodaySensor(SensorEntity):
         """Fetch new state data for the sensor.
         """
         day_colour = "Unknown"
-        if (datetime.datetime.now().time() < datetime.time(6)) {
-            import datetime
+        if datetime.datetime.now().time() < datetime.time(6):
             today = datetime.date.today()
             previous_day = today - datetime.timedelta(days=1)
             formatted_url = previous_day.strftime('https://www.api-couleur-tempo.fr/api/jourTempo/%Y-%m-%d')
             response = requests.get(formatted_url)
             data = response.json()
             day_colour = data['libCouleur']
-        } else {
+        else:
             response = requests.get("https://www.api-couleur-tempo.fr/api/jourTempo/today")
             data = response.json()
             day_colour = data['libCouleur']
-        }
 
         self._attr_native_value = day_colour
 
@@ -60,5 +58,8 @@ class TomorrowSensor(SensorEntity):
         """
         response = requests.get("https://www.api-couleur-tempo.fr/api/jourTempo/tomorrow")
         data = response.json()
-
-        self._attr_native_value = data['libCouleur']
+        day_colour = "Not Set Yet"
+        if data['codeJour'] != 0:
+            day_colour = data['libCouleur']
+        
+        self._attr_native_value = day_colour
