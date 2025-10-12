@@ -1,6 +1,6 @@
 {
   "domain": "hacs_tempo_intergration",
-  "name": "HACS Tempo Intergration",
+  "name": "Tempo Status",
   "codeowners": [
     "@tomcuzz"
   ],
