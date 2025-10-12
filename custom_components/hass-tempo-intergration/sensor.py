@@ -8,8 +8,23 @@ from homeassistant.components.sensor import (
 )
 from homeassistant.const import UnitOfTemperature
 from homeassistant.core import HomeAssistant
+from homeassistant.config_entries import ConfigEntry
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
+
+
+
+async def async_setup_entry(
+    hass: HomeAssistant, entry: ConfigEntry, async_add_entities: AddEntitiesCallback
+) -> None:
+    """Set up the sensors."""
+
+    coordinator = entry.runtime_data
+    entities: list[SensorEntity] = [
+        TodaySensor(coordinator),
+        TomorrowSensor(coordinator),
+    ]
+    async_add_entities(entities)
 
 
 def setup_platform(
