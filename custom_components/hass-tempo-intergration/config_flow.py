@@ -1,5 +1,8 @@
+from __future__ import annotations
+
 from homeassistant import config_entries
 from homeassistant.core import callback
+from homeassistant.config_entries import ConfigEntry
 from .const import DOMAIN
 
 
