@@ -1,0 +1,1 @@
+DOMAIN = "hacs_tempo_intergration"
