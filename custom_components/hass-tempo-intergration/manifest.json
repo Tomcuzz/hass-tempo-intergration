@@ -1,0 +1,13 @@
+{
+  "domain": "hacs_tempo_intergration",
+  "name": "HACS Tempo Intergration",
+  "codeowners": [
+    "@tomcuzz"
+  ],
+  "dependencies": [],
+  "documentation": "https://github.com/Tomcuzz/hass-tempo-intergration",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/Tomcuzz/hass-tempo-intergration/issues",
+  "requirements": [],
+  "version": "0.0.1"
+}
